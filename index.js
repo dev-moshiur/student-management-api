@@ -15,7 +15,11 @@ const port = process.env.PORT || 8002;
 const app = express();
 app.use(express.json());
 
-app.use(cors());
+app.use(cors({
+  origin:[
+    'http://localhost:3000'
+  ]
+}));
 
 app.get("/", (req, res) => {
   res.send("connected successfully");
