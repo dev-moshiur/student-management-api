@@ -8,6 +8,7 @@ const parent = require('./routes/parent')
 const register = require('./routes/register')
 const student = require('./routes/student')
 const present = require('./routes/present')
+const getDatalists = require('./routes/getDatalists')
 
 dotenv.config();
 const uri = process.env.URI;
@@ -30,6 +31,7 @@ app.use('/parent',parent)
 app.use('/register',register)
 app.use('/student',student)
 app.use('/present',present)
+app.use('/getDatalists',getDatalists)
 
 app.use((err, req, res, next) => {
   if (err) {
